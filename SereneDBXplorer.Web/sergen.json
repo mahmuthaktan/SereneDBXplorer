@@ -1,0 +1,29 @@
+{
+  "RootNamespace": "SereneDBXplorer",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "EndOfLine": "LF",
+  "Restore": {
+    "Exclude": [
+      "/**/*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "dbo.DatabaseProperties",
+          "Identifier": "DatabaseProperties",
+          "Module": "Default",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Community",
+    "InitialVersion": "6.5.1.0"
+  }
+}

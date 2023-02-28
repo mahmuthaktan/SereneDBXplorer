@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SereneDBXplorer.Web", "SereneDBXplorer.Web\SereneDBXplorer.Web.csproj", "{2C31A0FF-F6BD-426B-A7FF-563BCD9DC3C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C31A0FF-F6BD-426B-A7FF-563BCD9DC3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C31A0FF-F6BD-426B-A7FF-563BCD9DC3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C31A0FF-F6BD-426B-A7FF-563BCD9DC3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C31A0FF-F6BD-426B-A7FF-563BCD9DC3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E71365D-9D9B-4C56-B192-3C715422AA78}
+	EndGlobalSection
+EndGlobal
