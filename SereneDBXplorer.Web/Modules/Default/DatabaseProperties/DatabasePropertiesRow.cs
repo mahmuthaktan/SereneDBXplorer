@@ -19,7 +19,7 @@ namespace SereneDBXplorer.Default
             set => fields.DatabasePropertyId[this] = value;
         }
 
-        [DisplayName("Database Name"), Size(50), NotNull, QuickSearch, NameProperty]
+        [DisplayName("Database Name"), Size(30), NotNull, QuickSearch, NameProperty]
         public string DatabaseName
         {
             get => fields.DatabaseName[this];
