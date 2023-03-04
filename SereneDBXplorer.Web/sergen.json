@@ -14,11 +14,11 @@
       "Key": "Default",
       "Tables": [
         {
-          "Tablename": "dbo.DatabaseProperties",
-          "Identifier": "DatabaseProperties",
-          "Module": "Default",
-          "PermissionKey": "Administration:General"
-        }
+          "Tablename": "dbo.DatabaseDefinitions",
+          "Identifier": "DatabaseDefinitions",
+          "Module": "Definition",
+          "PermissionKey": "Administration:Definitions"
+        } 
       ]
     }
   ],

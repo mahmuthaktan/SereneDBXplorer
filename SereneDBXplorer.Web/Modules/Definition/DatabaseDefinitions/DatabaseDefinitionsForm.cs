@@ -1,12 +1,12 @@
-using Serenity.ComponentModel;
+﻿using Serenity.ComponentModel;
 using Serenity.Web;
 using System;
 
-namespace SereneDBXplorer.Default.Forms
+namespace SereneDBXplorer.Definition.Forms
 {
-    [FormScript("Default.DatabaseProperties")]
-    [BasedOnRow(typeof(DatabasePropertiesRow), CheckNames = true)]
-    public class DatabasePropertiesForm
+    [FormScript("Definition.DatabaseDefinitions")]
+    [BasedOnRow(typeof(DatabaseDefinitionsRow), CheckNames = true)]
+    public class DatabaseDefinitionsForm
     {
         public string DatabaseName { get; set; }
         public string HostName { get; set; }

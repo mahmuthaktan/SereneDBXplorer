@@ -79,3 +79,12 @@
 .s-PermissionCheckEditor .effective-permission.deny {
   background-image: url(../serenity/images/slash.png);
 }
+
+.s-SereneDBXplorer-Definition-DatabaseDefinitionsDialog > .size {
+  width: 450px;
+  height: 400px;
+}
+
+.s-SereneDBXplorer-Definition-DatabaseDefinitionsDialog .caption {
+  width: 150px;
+}

@@ -1,7 +1,7 @@
 ﻿import { StringEditor, DateEditor, BooleanEditor, PrefixedContext } from "@serenity-is/corelib";
 import { initFormType } from "@serenity-is/corelib/q";
 
-export interface DatabasePropertiesForm {
+export interface DatabaseDefinitionsForm {
     DatabaseName: StringEditor;
     HostName: StringEditor;
     CreationDate: DateEditor;
@@ -13,21 +13,21 @@ export interface DatabasePropertiesForm {
     IsActive: BooleanEditor;
 }
 
-export class DatabasePropertiesForm extends PrefixedContext {
-    static formKey = 'Default.DatabaseProperties';
+export class DatabaseDefinitionsForm extends PrefixedContext {
+    static formKey = 'Definition.DatabaseDefinitions';
     private static init: boolean;
 
     constructor(prefix: string) {
         super(prefix);
 
-        if (!DatabasePropertiesForm.init)  {
-            DatabasePropertiesForm.init = true;
+        if (!DatabaseDefinitionsForm.init)  {
+            DatabaseDefinitionsForm.init = true;
 
             var w0 = StringEditor;
             var w1 = DateEditor;
             var w2 = BooleanEditor;
 
-            initFormType(DatabasePropertiesForm, [
+            initFormType(DatabaseDefinitionsForm, [
                 'DatabaseName', w0,
                 'HostName', w0,
                 'CreationDate', w1,

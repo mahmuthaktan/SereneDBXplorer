@@ -6,57 +6,57 @@ using Serenity.Web;
 using System;
 using System.Data;
 using System.Globalization;
-using MyRow = SereneDBXplorer.Default.DatabasePropertiesRow;
+using MyRow = SereneDBXplorer.Definition.DatabaseDefinitionsRow;
 
-namespace SereneDBXplorer.Default.Endpoints
+namespace SereneDBXplorer.Definition.Endpoints
 {
-    [Route("Services/Default/DatabaseProperties/[action]")]
+    [Route("Services/Definition/DatabaseDefinitions/[action]")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]
-    public class DatabasePropertiesController : ServiceEndpoint
+    public class DatabaseDefinitionsController : ServiceEndpoint
     {
         [HttpPost, AuthorizeCreate(typeof(MyRow))]
         public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request,
-            [FromServices] IDatabasePropertiesSaveHandler handler)
+            [FromServices] IDatabaseDefinitionsSaveHandler handler)
         {
             return handler.Create(uow, request);
         }
 
         [HttpPost, AuthorizeUpdate(typeof(MyRow))]
         public SaveResponse Update(IUnitOfWork uow, SaveRequest<MyRow> request,
-            [FromServices] IDatabasePropertiesSaveHandler handler)
+            [FromServices] IDatabaseDefinitionsSaveHandler handler)
         {
             return handler.Update(uow, request);
         }
  
         [HttpPost, AuthorizeDelete(typeof(MyRow))]
         public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request,
-            [FromServices] IDatabasePropertiesDeleteHandler handler)
+            [FromServices] IDatabaseDefinitionsDeleteHandler handler)
         {
             return handler.Delete(uow, request);
         }
 
         [HttpPost]
         public RetrieveResponse<MyRow> Retrieve(IDbConnection connection, RetrieveRequest request,
-            [FromServices] IDatabasePropertiesRetrieveHandler handler)
+            [FromServices] IDatabaseDefinitionsRetrieveHandler handler)
         {
             return handler.Retrieve(connection, request);
         }
 
         [HttpPost, AuthorizeList(typeof(MyRow))]
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request,
-            [FromServices] IDatabasePropertiesListHandler handler)
+            [FromServices] IDatabaseDefinitionsListHandler handler)
         {
             return handler.List(connection, request);
         }
 
         [HttpPost, AuthorizeList(typeof(MyRow))]
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request,
-            [FromServices] IDatabasePropertiesListHandler handler,
+            [FromServices] IDatabaseDefinitionsListHandler handler,
             [FromServices] IExcelExporter exporter)
         {
             var data = List(connection, request, handler).Entities;
-            var bytes = exporter.Export(data, typeof(Columns.DatabasePropertiesColumns), request.ExportColumns);
-            return ExcelContentResult.Create(bytes, "DatabasePropertiesList_" +
+            var bytes = exporter.Export(data, typeof(Columns.DatabaseDefinitionsColumns), request.ExportColumns);
+            return ExcelContentResult.Create(bytes, "DatabaseDefinitionsList_" +
                 DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture) + ".xlsx");
         }
     }
