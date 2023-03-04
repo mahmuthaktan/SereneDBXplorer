@@ -1,4 +1,4 @@
-﻿using Serenity.ComponentModel;
+using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
 using System;
@@ -26,7 +26,7 @@ namespace SereneDBXplorer.Definition
             set => fields.DatabaseName[this] = value;
         }
 
-        [DisplayName("Host Name"), Size(50), NotNull]
+        [DisplayName("Host Name"), Size(50), NotNull,QuickSearch]
         public string HostName
         {
             get => fields.HostName[this];
@@ -40,11 +40,12 @@ namespace SereneDBXplorer.Definition
             set => fields.CreationDate[this] = value;
         }
 
-        [DisplayName("Db Type"), Column("DBType"), Size(100), NotNull]
-        public string DbType
+        [DisplayName("Db Type"), Column("DbTypeId"), Size(100), NotNull]
+
+        public DBTypeName? DbTypeId
         {
-            get => fields.DbType[this];
-            set => fields.DbType[this] = value;
+            get => fields.DbTypeId[this];
+            set => fields.DbTypeId[this] = value;
         }
 
         [DisplayName("Is Windows Auth"), NotNull]
@@ -98,7 +99,7 @@ namespace SereneDBXplorer.Definition
             public StringField DatabaseName;
             public StringField HostName;
             public DateTimeField CreationDate;
-            public StringField DbType;
+            public EnumField<DBTypeName> DbTypeId;
             public BooleanField IsWindowsAuth;
             public StringField Username;
             public StringField PasswordHash;

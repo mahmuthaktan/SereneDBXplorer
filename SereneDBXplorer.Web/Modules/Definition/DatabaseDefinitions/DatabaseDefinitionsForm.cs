@@ -1,4 +1,4 @@
-﻿using Serenity.ComponentModel;
+using Serenity.ComponentModel;
 using Serenity.Web;
 using System;
 
@@ -11,7 +11,7 @@ namespace SereneDBXplorer.Definition.Forms
         public string DatabaseName { get; set; }
         public string HostName { get; set; }
         public DateTime CreationDate { get; set; }
-        public string DbType { get; set; }
+        public DBTypeName DbTypeId { get; set; }
         public bool IsWindowsAuth { get; set; }
         public string Username { get; set; }
         public string PasswordHash { get; set; }

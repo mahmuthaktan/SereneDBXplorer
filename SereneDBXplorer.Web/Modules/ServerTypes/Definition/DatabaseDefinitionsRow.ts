@@ -1,11 +1,12 @@
-﻿import { fieldsProxy } from "@serenity-is/corelib/q";
+﻿import { DBTypeName } from "./DBTypeName";
+import { fieldsProxy } from "@serenity-is/corelib/q";
 
 export interface DatabaseDefinitionsRow {
     DatabaseDefinitionId?: number;
     DatabaseName?: string;
     HostName?: string;
     CreationDate?: string;
-    DbType?: string;
+    DbTypeId?: DBTypeName;
     IsWindowsAuth?: boolean;
     Username?: string;
     PasswordHash?: string;

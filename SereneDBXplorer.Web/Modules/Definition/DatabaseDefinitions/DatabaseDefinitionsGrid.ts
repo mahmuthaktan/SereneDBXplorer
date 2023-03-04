@@ -1,4 +1,5 @@
-﻿import { Decorators, EntityGrid } from '@serenity-is/corelib';
+import { Decorators, EntityGrid, QuickSearchField } from '@serenity-is/corelib';
+import { text } from '@serenity-is/corelib/q';
 import { DatabaseDefinitionsColumns, DatabaseDefinitionsRow, DatabaseDefinitionsService } from '../../ServerTypes/Definition';
 import { DatabaseDefinitionsDialog } from './DatabaseDefinitionsDialog';
 
@@ -13,5 +14,18 @@ export class DatabaseDefinitionsGrid extends EntityGrid<DatabaseDefinitionsRow, 
 
     constructor(container: JQuery) {
         super(container);
+    }
+    protected getQuickSearchFields(): QuickSearchField[]
+    {
+        const fld = DatabaseDefinitionsRow.Fields;
+        const txt = (s) =>
+            text(`Db.${DatabaseDefinitionsRow.localTextPrefix}.${s}`).toLowerCase();
+
+        return [
+            { name: "", title: "All" },
+            { name: fld.DatabaseName, title: txt(fld.DatabaseName) },
+            { name: fld.HostName, title: txt(fld.HostName) },
+            { name: fld.DbTypeId, title: txt(fld.DbTypeId) }
+        ];
     }
 }

@@ -14,7 +14,7 @@ namespace SereneDBXplorer.Definition.Columns
         public string DatabaseName { get; set; }
         [DisplayName("Hostname /Ip Adress"), Width(180), AlignRight]
         public string HostName { get; set; }
-        public string DbType { get; set; }
+        public int DbTypeId { get; set; }
         //public DateTime CreationDate { get; set; }
         //public bool IsWindowsAuth { get; set; }
         //public string Username { get; set; }

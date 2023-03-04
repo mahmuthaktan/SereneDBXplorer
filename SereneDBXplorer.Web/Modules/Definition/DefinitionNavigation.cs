@@ -1,4 +1,7 @@
-﻿using Serenity.Navigation;
+using Serenity.Navigation;
 using MyPages = SereneDBXplorer.Definition.Pages;
 
-[assembly: NavigationLink(int.MaxValue, "Definition/Database Definitions", typeof(MyPages.DatabaseDefinitionsController), icon: null)]
+ 
+[assembly: NavigationMenu(2000, "Definition", icon: "fa-database")]
+
+[assembly: NavigationLink(2100, "Definition/Database List Definitions", typeof(MyPages.DatabaseDefinitionsController), icon: "fa-server")]

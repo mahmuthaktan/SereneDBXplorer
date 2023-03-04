@@ -12,7 +12,7 @@ namespace SereneDBXplorer.Migrations.DefaultDB
                 .WithColumn("DatabaseName").AsString(50).NotNullable()
                 .WithColumn("HostName").AsString(50).NotNullable()
                 .WithColumn("CreationDate").AsDateTime().NotNullable()
-                .WithColumn("DBType").AsString(100).NotNullable()
+                .WithColumn("DbTypeId").AsInt32().NotNullable()
                 .WithColumn("IsWindowsAuth").AsBoolean().NotNullable().WithDefaultValue(true)
                 .WithColumn("Username").AsString(100).NotNullable()
                 .WithColumn("PasswordHash").AsString(100).NotNullable()
